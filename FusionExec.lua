@@ -1,7 +1,15 @@
 -- FusionExec: Draggable Frame Library
 local FusionExec = {}
 
+-- Function to create a draggable frame
 function FusionExec:CreateDraggableFrame()
+    -- Destroy any existing GUI created by FusionExec
+    local existingGui = game:GetService("CoreGui"):FindFirstChild("FusionExecUI")
+    if existingGui then
+        existingGui:Destroy()
+    end
+
+    -- Create a new GUI
     local ScreenGui = Instance.new("ScreenGui")
     local Frame = Instance.new("Frame")
 
